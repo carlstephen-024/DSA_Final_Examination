@@ -1,0 +1,45 @@
+// Carl Stephen M. Quilopras
+// Initialize an empty array for grocery stack
+let grocery_stacks = [];
+// Peek function to check stack size and return the last item
+function peek() {
+    if (grocery_stacks.length === 0) {  // Check if the stack is empty
+        console.log("The current stack is empty.");
+        return null;
+    } else {        // If the stack is not empty, return the last item
+        console.log("The top item in the stack is:", grocery_stacks[grocery_stacks.length - 1]);// Log the last item in the stack
+        return grocery_stacks[grocery_stacks.length - 1];// Return the last item in the stack
+    }
+}
+// Push function to add an item to the stack
+function push(item) {
+    if (grocery_stacks.length < 5) {    // Check if the stack has less than 5 items in it
+        grocery_stacks.push(item);      // Add the item to the stack and log the following message
+        console.log(`"${item}" is now added to the stack.`);
+    } else {        // If the stack is full, log the following message
+        console.log("The stack is full! Cannot add more items to the stack.");
+    }
+    peek();         // Call peek to show the last item after pushing the new item into the stack
+    console.log("This is the updated stack:", grocery_stacks);
+}
+// Pop function to remove the last item from the stack
+function pop() {
+    if (grocery_stacks.length > 0) {        // Check if the stack has items to pop or remove
+        let removed_item = grocery_stacks.pop();// Remove the last item from the stack and store it in a variable as removed_item and display the following message
+        console.log(`"${removed_item}"is removed from the stack.`);
+    } else {        // If the stack is empty, log the following message
+        console.log("Cannot pop or remove any, the stack is empty.");
+    }
+    peek();     // Call peek to show the last item after popping the stack and display the following message
+    console.log("This is the updated stack:", grocery_stacks);
+}
+// Prompt user for 5 grocery items
+for (let i = 0; i < 5; i++) {
+    let item = prompt(`Enter item ${i + 1}:`);  // Prompt user for an item and store it in a variable "item"
+    push(item);
+}
+// Example pop operation
+pop(); // Removes last added item
+
+// Example pop operation
+pop(); // Removes another item
